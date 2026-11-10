@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-desk: #E9E7E2;
+    --text-ink: #1A1A1A;
+    --accent: #E8572A;
+    --oled-bg: #0B0B0B;
+    --oled-text: #F0EFEA;
+    --oled-muted: #888880;
+    --oled-border: #222222;
+  }
+
+  body {
+    background-color: var(--bg-desk);
+    color: var(--text-ink);
+    font-family: 'IBM Plex Mono', monospace;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Archivo Black', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom terminal styling */
+.font-mono-terminal {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Brutalist hard shadows */
+.brutalist-border {
+  border: 2px solid #1A1A1A;
+}
+
+.brutalist-shadow {
+  box-shadow: 4px 4px 0px #1A1A1A;
+}
+
+.brutalist-shadow-sm {
+  box-shadow: 2px 2px 0px #1A1A1A;
+}
+
+.brutalist-shadow-lg {
+  box-shadow: 6px 6px 0px #1A1A1A;
+}
+
+.brutalist-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px #1A1A1A;
+}
+
+/* Custom OLED scrollbars */
+.oled-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.oled-scrollbar::-webkit-scrollbar-track {
+  background: #0B0B0B;
+}
+
+.oled-scrollbar::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 0px;
+}
+
+.oled-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #E8572A;
+}
+
+/* Blinking terminal cursor */
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1.1em;
+  background-color: #E8572A;
+  vertical-align: text-bottom;
+  animation: blink-cursor 1s infinite;
+}
